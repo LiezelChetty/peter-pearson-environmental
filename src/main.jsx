@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowUpRight, Factory, Droplets, Recycle, FlaskConical, MapPin, Mail, Phone } from 'lucide-react';
+import { ArrowUpRight, Recycle, Mail, Phone } from 'lucide-react';
 import './styles.css';
 
 const siteImage = 'https://ppenvironmental.ie/wp-content/uploads/2020/02/pp-environmental-header-scaled-2000x850.jpg';
@@ -32,7 +32,11 @@ function App() {
       <div className="concept-bar">SPECULATIVE WEBSITE CONCEPT BY DESIGNOVATION — NOT AN OFFICIAL PP ENVIRONMENTAL WEBSITE</div>
       <header className="header">
         <a className="brand" href="#top" aria-label="Peter Pearson Environmental Consultants">
-          <img className="brand-logo" style={{ width: '190px', height: 'auto', display: 'block' }} src="/peter-pearson-logo.svg" alt="Peter Pearson Environmental Consultants — To protect and preserve" />
+          <span className="brand-text">
+            <strong>Peter Pearson</strong>
+            <span>Environmental Consultants</span>
+            <small>To protect and preserve</small>
+          </span>
         </a>
         <nav className="nav">
           <a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
