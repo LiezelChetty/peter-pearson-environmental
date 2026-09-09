@@ -1,22 +1,29 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowUpRight, Menu, Leaf, Factory, Droplets, Recycle, FlaskConical, MapPin, Mail, Phone } from 'lucide-react';
+import { ArrowUpRight, Leaf, Factory, Droplets, Recycle, FlaskConical, MapPin, Mail, Phone } from 'lucide-react';
 import './styles.css';
 
+const siteImage = 'https://ppenvironmental.ie/wp-content/uploads/2020/02/pp-environmental-header-scaled-2000x850.jpg';
+const siteAssets = {
+  food: 'https://ppenvironmental.ie/wp-content/uploads/2020/02/food-and-drink.svg',
+  pharma: 'https://ppenvironmental.ie/wp-content/uploads/2020/02/pharma.svg',
+  metal: 'https://ppenvironmental.ie/wp-content/uploads/2020/02/metal.svg',
+  compliance: 'https://ppenvironmental.ie/wp-content/uploads/2020/02/compliance.svg',
+  csr: 'https://ppenvironmental.ie/wp-content/uploads/2020/02/corporate-responsibility.svg',
+  closure: 'https://ppenvironmental.ie/wp-content/uploads/2020/02/site-closure.svg',
+};
+
 const services = [
-  ['Environmental Compliance', 'Practical support for organisations navigating environmental requirements, licensing and ongoing compliance.'],
-  ['Environmental Management', 'Clear, commercially focused environmental management for operational sites and complex facilities.'],
-  ['Monitoring & Assessment', 'Structured environmental assessment and monitoring to help clients understand risk, impact and performance.'],
-  ['Regulatory Support', 'Support for facilities engaging with regulators and local authorities on environmental matters.'],
+  ['Compliance / licence management', 'Support for companies licensed by the EPA or Local Authority, including reporting, environmental management systems, surveys and licence reviews.', siteAssets.compliance],
+  ['Corporate social responsibility', 'Practical support around energy, carbon, waste, plastics and environmental performance.', siteAssets.csr],
+  ['Site closure / licence transfer', 'Experienced support through EPA licence transfers, closures, surrender applications and associated environmental issues.', siteAssets.closure],
 ];
 
 const sectors = [
-  { icon: Factory, title: 'Manufacturing', text: 'Environmental support for operational and industrial facilities.' },
-  { icon: FlaskConical, title: 'Food & Drink', text: 'Practical environmental input across production and processing environments.' },
-  { icon: FlaskConical, title: 'Pharmaceutical', text: 'Technical consultancy for complex, highly regulated sites.' },
-  { icon: Recycle, title: 'Waste', text: 'Environmental management for waste and resource-intensive operations.' },
-  { icon: Droplets, title: 'Licensed Facilities', text: 'Support for EPA and local-authority licensed facilities.' },
-  { icon: MapPin, title: 'Local Authority', text: 'Clear environmental advice aligned with statutory requirements.' },
+  { icon: siteAssets.food, title: 'Food, Drink & Milk', text: 'Environmental support for production, processing and wastewater operations.' },
+  { icon: siteAssets.pharma, title: 'Pharmaceutical', text: 'Technical support for highly regulated manufacturing environments.' },
+  { icon: siteAssets.metal, title: 'Metals', text: 'Environmental management across emissions, drainage, monitoring and compliance.' },
+  { icon: Recycle, title: 'Waste', text: 'Support for waste management, resource use and environmental obligations.' },
 ];
 
 function App() {
@@ -29,68 +36,72 @@ function App() {
           <span><strong>PP</strong> ENVIRONMENTAL <small>CONSULTANTS</small></span>
         </a>
         <nav className="nav">
-          <a href="#services">Services</a>
-          <a href="#sectors">Sectors</a>
-          <a href="#approach">Approach</a>
-          <a href="#contact">Contact</a>
+          <a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
         </nav>
-        <button className="menu"><Menu size={23} /></button>
       </header>
 
       <main id="top">
         <section className="hero">
-          <div className="hero-copy">
-            <p className="eyebrow">ENVIRONMENTAL CONSULTANCY · WATERFORD</p>
-            <h1>Clear thinking for<br/><em>complex environments.</em></h1>
-            <p className="lede">Specialist environmental consultancy supporting industry, licensed facilities and organisations across the South East.</p>
-            <a className="button" href="#contact">Explore the approach <ArrowUpRight size={17}/></a>
+          <div className="hero-image" style={{ backgroundImage: `url(${siteImage})` }}></div>
+          <div className="hero-overlay"></div>
+          <div className="hero-content">
+            <p className="eyebrow">ENVIRONMENTAL CONSULTANCY · WATERFORD · IRELAND</p>
+            <h1>Environmental<br/><em>expertise in action.</em></h1>
+            <p className="lede">Environmental management assistance for manufacturing companies, EPA and Local Authority licensed facilities across Ireland.</p>
+            <a className="button button-light" href="#services">Explore services <ArrowUpRight size={17}/></a>
           </div>
-          <div className="hero-visual">
-            <div className="orb orb-a"></div><div className="orb orb-b"></div>
-            <div className="visual-card">
-              <span>01 / 04</span>
-              <div className="visual-lines"></div>
-              <p>ENVIRONMENTAL<br/>PERFORMANCE<br/><strong>BY DESIGN.</strong></p>
-            </div>
-          </div>
+          <div className="hero-caption"><span>PP ENVIRONMENTAL CONSULTANTS</span><span>EST. 2009 · WATERFORD</span></div>
         </section>
 
         <section className="intro section-grid">
-          <div className="section-label">01 / THE STUDIO</div>
+          <div className="section-label">01 / THE CONSULTANCY</div>
           <div className="intro-main">
-            <h2>Technical expertise.<br/><span>Practical advice.</span></h2>
-            <p>PP Environmental Consultants provides specialist environmental support to businesses operating in demanding, regulated environments. The proposition here is simple: make complex environmental requirements easier to understand, manage and act on.</p>
+            <p className="eyebrow">PRACTICAL ENVIRONMENTAL MANAGEMENT</p>
+            <h2>Complex requirements.<br/><span>Clear direction.</span></h2>
+            <p>PP Environmental Consultants provides specialist environmental management assistance to manufacturing companies and licensed facilities. The consultancy helps organisations navigate complex and changing environmental legislation while identifying practical routes towards better performance in nature, energy, water and waste.</p>
           </div>
         </section>
 
-        <section id="services" className="dark-section">
+        <section id="services" className="services-section">
           <div className="section-grid">
             <div className="section-label">02 / SERVICES</div>
             <div className="content-wide">
-              <div className="section-head"><h2>What we help<br/><span>clients navigate.</span></h2><p>Focused environmental consultancy for businesses where compliance, operations and environmental performance intersect.</p></div>
+              <div className="section-head"><h2>Environmental<br/><span>management.</span></h2><p>A tighter, more visual presentation of the core services already offered by PP Environmental Consultants.</p></div>
               <div className="service-grid">
-                {services.map(([title, text], i) => <article className="service" key={title}><span>0{i+1}</span><h3>{title}</h3><p>{text}</p><ArrowUpRight size={19}/></article>)}
+                {services.map(([title, text, image], i) => <article className="service-card" key={title}>
+                  <div className="service-image"><img src={image} alt="" /></div>
+                  <div className="service-number">0{i + 1}</div>
+                  <h3>{title}</h3><p>{text}</p><ArrowUpRight className="card-arrow" size={19}/>
+                </article>)}
               </div>
             </div>
           </div>
         </section>
 
-        <section id="sectors" className="section-grid sectors-section">
-          <div className="section-label">03 / SECTORS</div>
-          <div className="content-wide"><div className="section-head"><h2>Built around<br/><span>real operations.</span></h2><p>Environmental challenges look different from one facility to the next. The experience is shaped around the operational context.</p></div>
-          <div className="sector-grid">{sectors.map(({icon: Icon, title, text}) => <article className="sector-card" key={title}><Icon size={27} strokeWidth={1.5}/><h3>{title}</h3><p>{text}</p></article>)}</div></div>
+        <section id="sectors" className="sectors-section">
+          <div className="section-grid">
+            <div className="section-label">03 / SECTORS</div>
+            <div className="content-wide">
+              <div className="section-head"><h2>Built around<br/><span>real operations.</span></h2><p>Experience across the sectors where environmental compliance and operational performance meet.</p></div>
+              <div className="sector-grid">
+                {sectors.map(({ icon: Icon, title, text }) => <article className="sector-card" key={title}>
+                  {typeof Icon === 'string' ? <img src={Icon} alt="" /> : <Icon size={27} strokeWidth={1.5}/>}<h3>{title}</h3><p>{text}</p>
+                </article>)}
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="approach" className="approach dark-section">
-          <div className="section-grid">
-            <div className="section-label">04 / APPROACH</div>
-            <div className="content-wide approach-wrap">
-              <div><p className="eyebrow">THE PP APPROACH</p><h2>Understand.<br/>Advise.<br/><span>Act.</span></h2></div>
-              <div className="steps">
-                <div><span>01</span><h3>Understand the operation</h3><p>Start with the site, the process and the environmental context.</p></div>
-                <div><span>02</span><h3>Translate complexity</h3><p>Turn technical and regulatory requirements into clear priorities.</p></div>
-                <div><span>03</span><h3>Support confident decisions</h3><p>Give teams practical guidance they can use in the real world.</p></div>
-              </div>
+        <section id="experience" className="experience dark-section">
+          <div className="experience-image" style={{ backgroundImage: `url(${siteImage})` }}></div>
+          <div className="experience-overlay"></div>
+          <div className="section-grid experience-inner">
+            <div className="section-label">04 / EXPERIENCE</div>
+            <div className="experience-copy">
+              <p className="eyebrow">ESTABLISHED IN WATERFORD</p>
+              <h2>25 years of<br/><span>environmental management.</span></h2>
+              <p>Peter Pearson has over 25 years of environmental management experience, including 20 years as an Environmental Consultant and five years as Energy & Environment Manager with Waterford Crystal.</p>
+              <div className="experience-meta"><span>2009</span><small>PP Environmental established</small><span>25+</span><small>years environmental management experience</small></div>
             </div>
           </div>
         </section>
@@ -101,7 +112,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="footer"><div><div className="footer-brand">PP ENVIRONMENTAL <span>CONSULTANTS</span></div><p>Specialist environmental consultancy for industry, licensed facilities and organisations across the South East.</p></div><div className="footer-right"><span>Speculative concept by Designovation</span><a href="https://designovation.ie/" target="_blank">designovation.ie <ArrowUpRight size={15}/></a></div></footer>
+      <footer className="footer"><div><div className="footer-brand">PP ENVIRONMENTAL <span>CONSULTANTS</span></div><p>Specialist environmental consultancy for industry, licensed facilities and organisations across Ireland.</p></div><div className="footer-right"><span>Speculative concept by Designovation</span><a href="https://designovation.ie/" target="_blank" rel="noreferrer">designovation.ie <ArrowUpRight size={15}/></a></div></footer>
     </div>
   );
 }
