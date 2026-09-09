@@ -89,7 +89,7 @@ function App() {
               <div className="section-head"><h2>Built around<br/><span>real operations.</span></h2><p>Experience across the sectors where environmental compliance and operational performance meet.</p></div>
               <div className="sector-grid">
                 {sectors.map(({ icon: Icon, title, text }) => <article className="sector-card" key={title}>
-                  <div className="sector-icon">{typeof Icon === 'string' ? <img src={Icon} alt="" /> : <Icon size={29} strokeWidth={1.8}/>}</div>
+                  <div className={title === 'Waste' ? 'sector-icon sector-icon-waste' : 'sector-icon'}>{typeof Icon === 'string' ? <img src={Icon} alt="" /> : <Icon size={42} strokeWidth={1.7}/>}</div>
                   <h3>{title}</h3><p>{text}</p>
                 </article>)}
               </div>
