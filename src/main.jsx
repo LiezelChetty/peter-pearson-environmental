@@ -32,7 +32,7 @@ function App() {
       <div className="concept-bar">SPECULATIVE WEBSITE CONCEPT BY DESIGNOVATION — NOT AN OFFICIAL PP ENVIRONMENTAL WEBSITE</div>
       <header className="header">
         <a className="brand" href="#top" aria-label="Peter Pearson Environmental Consultants">
-          <img className="brand-logo" src="/peter-pearson-logo.svg" alt="Peter Pearson Environmental Consultants — To protect and preserve" />
+          <img className="brand-logo" style={{ width: '190px', height: 'auto', display: 'block' }} src="/peter-pearson-logo.svg" alt="Peter Pearson Environmental Consultants — To protect and preserve" />
         </a>
         <nav className="nav">
           <a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
