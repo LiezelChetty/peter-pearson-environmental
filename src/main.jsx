@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowUpRight, Leaf, Factory, Droplets, Recycle, FlaskConical, MapPin, Mail, Phone } from 'lucide-react';
+import { ArrowUpRight, Factory, Droplets, Recycle, FlaskConical, MapPin, Mail, Phone } from 'lucide-react';
 import './styles.css';
 
 const siteImage = 'https://ppenvironmental.ie/wp-content/uploads/2020/02/pp-environmental-header-scaled-2000x850.jpg';
@@ -31,9 +31,8 @@ function App() {
     <div className="site">
       <div className="concept-bar">SPECULATIVE WEBSITE CONCEPT BY DESIGNOVATION — NOT AN OFFICIAL PP ENVIRONMENTAL WEBSITE</div>
       <header className="header">
-        <a className="brand" href="#top" aria-label="PP Environmental Consultants">
-          <span className="brand-mark"><Leaf size={19} strokeWidth={1.8} /></span>
-          <span><strong>PP</strong> ENVIRONMENTAL <small>CONSULTANTS</small></span>
+        <a className="brand" href="#top" aria-label="Peter Pearson Environmental Consultants">
+          <img className="brand-logo" src="/assets/pp-logo-transparent.png" alt="Peter Pearson Environmental Consultants" />
         </a>
         <nav className="nav">
           <a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
@@ -71,7 +70,8 @@ function App() {
                 {services.map(([title, text, image], i) => <article className="service-card" key={title}>
                   <div className="service-image"><img src={image} alt="" /></div>
                   <div className="service-number">0{i + 1}</div>
-                  <h3>{title}</h3><p>{text}</p><ArrowUpRight className="card-arrow" size={19}/>
+                  <div className="service-copy"><h3>{title}</h3><p>{text}</p></div>
+                  <ArrowUpRight className="card-arrow" size={19}/>
                 </article>)}
               </div>
             </div>
@@ -85,7 +85,8 @@ function App() {
               <div className="section-head"><h2>Built around<br/><span>real operations.</span></h2><p>Experience across the sectors where environmental compliance and operational performance meet.</p></div>
               <div className="sector-grid">
                 {sectors.map(({ icon: Icon, title, text }) => <article className="sector-card" key={title}>
-                  {typeof Icon === 'string' ? <img src={Icon} alt="" /> : <Icon size={27} strokeWidth={1.5}/>}<h3>{title}</h3><p>{text}</p>
+                  <div className="sector-icon">{typeof Icon === 'string' ? <img src={Icon} alt="" /> : <Icon size={29} strokeWidth={1.8}/>}</div>
+                  <h3>{title}</h3><p>{text}</p>
                 </article>)}
               </div>
             </div>
